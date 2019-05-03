@@ -23,6 +23,12 @@ namespace SatisfactorySaveParser.Structures
             PathName = reader.ReadLengthPrefixedString();
         }
 
+        public void SerializeData(BinaryWriter writer)
+        {
+            writer.WriteLengthPrefixedString(LevelName);
+            writer.WriteLengthPrefixedString(PathName);
+        }
+
         public override string ToString()
         {
             return $"Level: {LevelName} Path: {PathName}";
