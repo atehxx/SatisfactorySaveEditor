@@ -14,5 +14,14 @@ namespace SatisfactorySaveParser.Structures
         {
             return $"X: {X} Y: {Y} Z: {Z} W: {W}";
         }
+
+        public Vector4 Set(float x, float y, float z, float w)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
+            return this;
+        }
     }
 }
