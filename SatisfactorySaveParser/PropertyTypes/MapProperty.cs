@@ -4,6 +4,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes
 {
+    [System.Serializable]
     public class MapProperty : SerializedProperty
     {
         public const string TypeName = nameof(MapProperty);

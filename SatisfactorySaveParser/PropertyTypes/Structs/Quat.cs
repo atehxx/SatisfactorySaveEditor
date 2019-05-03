@@ -2,6 +2,7 @@
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [System.Serializable]
     public class Quat : IStructData
     {
         public float X { get; set; }

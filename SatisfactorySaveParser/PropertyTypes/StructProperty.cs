@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace SatisfactorySaveParser.PropertyTypes
 {
+    [System.Serializable]
     public class StructProperty : SerializedProperty
     {
         public const string TypeName = nameof(StructProperty);

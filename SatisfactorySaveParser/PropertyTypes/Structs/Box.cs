@@ -4,6 +4,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [Serializable]
     public class Box : IStructData
     {
         public Vector3 Min { get; set; }

@@ -6,6 +6,7 @@ namespace SatisfactorySaveParser.Structures
     /// <summary>
     ///     Engine class: FObjectReferenceDisc
     /// </summary>
+    [Serializable]
     public class ObjectReference : IObjectReference
     {
         public string LevelName { get; set; }

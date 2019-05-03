@@ -3,6 +3,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [System.Serializable]
     public class Vector : Vector3, IStructData
     {
         public int SerializedLength => 12;

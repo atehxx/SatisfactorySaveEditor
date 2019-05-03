@@ -4,6 +4,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes
 {
+    [System.Serializable]
     public abstract class SerializedProperty
     {
         public string PropertyName { get; }

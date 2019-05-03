@@ -3,6 +3,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [System.Serializable]
     public class LinearColor : IStructData
     {
         public float R { get; set; }

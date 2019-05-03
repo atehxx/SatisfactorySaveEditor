@@ -3,6 +3,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes
 {
+    [System.Serializable]
     public class EnumProperty : SerializedProperty
     {
         public const string TypeName = nameof(EnumProperty);

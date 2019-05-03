@@ -7,6 +7,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser
 {
+    [Serializable]
     public class SerializedFields : List<SerializedProperty>
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();

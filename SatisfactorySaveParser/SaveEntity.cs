@@ -1,5 +1,6 @@
 ﻿using NLog;
 using SatisfactorySaveParser.Structures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -8,6 +9,7 @@ namespace SatisfactorySaveParser
     /// <summary>
     ///     Engine class: FActorSaveHeader
     /// </summary>
+    [Serializable]
     public class SaveEntity : SaveObject
     {
         public const int TypeID = 1;

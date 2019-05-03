@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [Serializable]
     public class DynamicStructData : IStructData
     {
         public string Type { get; }

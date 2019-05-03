@@ -3,6 +3,7 @@ using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [Serializable]
     public class Color : IStructData
     {
         public byte R { get; set; }

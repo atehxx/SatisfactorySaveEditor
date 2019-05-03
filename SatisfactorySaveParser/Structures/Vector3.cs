@@ -1,5 +1,8 @@
-﻿namespace SatisfactorySaveParser.Structures
+﻿using System;
+
+namespace SatisfactorySaveParser.Structures
 {
+    [Serializable]
     public class Vector3
     {
         public float X { get; set; }

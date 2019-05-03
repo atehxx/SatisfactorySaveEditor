@@ -2,6 +2,7 @@
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [System.Serializable]
     public class RailroadTrackPosition : IStructData
     {
         public string Root { get; set; }

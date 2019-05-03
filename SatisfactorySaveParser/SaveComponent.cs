@@ -1,4 +1,5 @@
 ﻿using NLog;
+using System;
 using System.IO;
 
 namespace SatisfactorySaveParser
@@ -6,6 +7,7 @@ namespace SatisfactorySaveParser
     /// <summary>
     ///     Engine class: FObjectSaveHeader
     /// </summary>
+    [Serializable]
     public class SaveComponent : SaveObject
     {
         public const int TypeID = 0;

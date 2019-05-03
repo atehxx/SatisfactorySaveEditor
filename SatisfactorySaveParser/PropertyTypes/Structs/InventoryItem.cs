@@ -2,6 +2,7 @@
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
+    [System.Serializable]
     public class InventoryItem : IStructData
     {
         public int Unknown1 { get; set; }

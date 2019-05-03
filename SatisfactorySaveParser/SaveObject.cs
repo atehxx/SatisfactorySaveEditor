@@ -1,4 +1,5 @@
 ﻿using NLog;
+using System;
 using System.IO;
 
 namespace SatisfactorySaveParser
@@ -7,6 +8,7 @@ namespace SatisfactorySaveParser
     ///     Class representing a single saved object in a Satisfactory save
     ///     Engine class: FObjectBaseSaveHeader
     /// </summary>
+    [Serializable]
     public abstract class SaveObject
     {
         /// <summary>
