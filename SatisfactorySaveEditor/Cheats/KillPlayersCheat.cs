@@ -53,10 +53,7 @@ namespace SatisfactorySaveEditor.Cheats
                     ParentObjectName = "",
                     ParentObjectRoot = ""
                 };
-                newSaveObject.DataFields = new SerializedFields()
-                {
-                    TrailingData = null
-                };
+                newSaveObject.DataFields = new SerializedFields();
                 newSaveObject.DataFields.Add(new ObjectProperty("mInventory", 0) { LevelName = "Persistent_Level", PathName = $"Persistent_Level:PersistentLevel.BP_Crate_C_{currentStorageID}.inventory" });
                 rootItem.FindChild("BP_Crate.BP_Crate_C", false).Items.Add(new SaveEntityModel(newSaveObject));
                 rootItem.Remove(player);

@@ -11,6 +11,9 @@ namespace SatisfactorySaveParser
     [Serializable]
     public abstract class SaveObject
     {
+        private static readonly Logger log = LogManager.GetCurrentClassLogger();
+
+
         /// <summary>
         ///     Forward slash separated path of the script/prefab of this object.
         ///     Can be an empty string.
@@ -32,6 +35,11 @@ namespace SatisfactorySaveParser
         ///     Main serialized data of the object
         /// </summary>
         public SerializedFields DataFields { get; set; }
+
+        /// <summary>
+        /// Not yet understood data of this object
+        /// </summary>
+        public byte[] UnknownData { get; set; }
 
         public SaveObject(string typePath, string rootObject, string instanceName)
         {
@@ -57,11 +65,35 @@ namespace SatisfactorySaveParser
         public virtual void SerializeData(BinaryWriter writer)
         {
             DataFields.Serialize(writer);
+            SerializeClassSpecificData(writer);
         }
 
         public virtual void ParseData(int length, BinaryReader reader)
         {
-            DataFields = SerializedFields.Parse(length, reader);
+            long remainingBytes = 0;
+            DataFields = SerializedFields.Parse(length, reader, out remainingBytes);
+            ParseClassSpecificData(remainingBytes, reader);
+        }
+
+        public virtual void ParseClassSpecificData(long length, BinaryReader reader)
+        {
+            if (length > 0)
+            {
+                //log.Warn($"{length} bytes left after reading all serialized fields!");
+                //log.Trace($"In object: {InstanceName}");
+                UnknownData = reader.ReadBytes((int)length);
+                //log.Trace(BitConverter.ToString(UnknownData).Replace("-", " "));
+                //log.Trace(System.Text.Encoding.UTF8.GetString(UnknownData));
+            }
+        }
+
+        public virtual void SerializeClassSpecificData(BinaryWriter writer)
+        {
+            if (UnknownData != null)
+            {
+                writer.Write(UnknownData);
+            }
+
         }
 
         public override string ToString()

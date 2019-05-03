@@ -12,8 +12,6 @@ namespace SatisfactorySaveParser
     {
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
 
-        public byte[] TrailingData { get; set; }
-
         public void Serialize(BinaryWriter writer)
         {
             foreach (var field in this)
@@ -24,11 +22,9 @@ namespace SatisfactorySaveParser
             writer.WriteLengthPrefixedString("None");
 
             writer.Write(0);
-            if (TrailingData != null)
-                writer.Write(TrailingData);
         }
 
-        public static SerializedFields Parse(int length, BinaryReader reader)
+        public static SerializedFields Parse(int length, BinaryReader reader, out long remainingBytes)
         {
             var start = reader.BaseStream.Position;
             var result = new SerializedFields();
@@ -42,13 +38,7 @@ namespace SatisfactorySaveParser
             var int1 = reader.ReadInt32();
             Trace.Assert(int1 == 0);
 
-            var remainingBytes = start + length - reader.BaseStream.Position;
-            if (remainingBytes > 0)
-            {
-                //log.Warn($"{remainingBytes} bytes left after reading all serialized fields!");
-                result.TrailingData = reader.ReadBytes((int)remainingBytes);
-                //log.Trace(BitConverter.ToString(result.TrailingData).Replace("-", " "));
-            }
+            remainingBytes = start + length - reader.BaseStream.Position;
 
             //if (remainingBytes == 4)
             ////if(result.Fields.Count > 0)
