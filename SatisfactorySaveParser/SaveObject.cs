@@ -32,6 +32,28 @@ namespace SatisfactorySaveParser
         public string InstanceName { get; set; }
 
         /// <summary>
+        /// Numeric Id part of <c>InstanceName</c> (last number).
+        /// <para>Used to find next valid number for new objects by iterating objects of this typepath</para>
+        /// </summary>
+        public int SequentialInstanceId
+        {
+            get
+            {
+                var parts = InstanceName.Split(new char[1] { '_' });
+                if (parts.Length > 0)
+                {
+                    var lastPart = parts[parts.Length - 1];
+                    int id = 0;
+                    if (int.TryParse(lastPart, out id))
+                    {
+                        return id;
+                    }
+                }
+                return 0;
+            }
+        }
+
+        /// <summary>
         ///     Main serialized data of the object
         /// </summary>
         public SerializedFields DataFields { get; set; }
@@ -48,9 +70,13 @@ namespace SatisfactorySaveParser
             InstanceName = instanceName;
         }
 
-        protected SaveObject(BinaryReader reader)
+        protected SaveObject()
         {
-            TypePath = reader.ReadLengthPrefixedString();
+        }
+
+        public virtual void ParseHeader(BinaryReader reader)
+        {
+            //TypePath = reader.ReadLengthPrefixedString(); // parsed outside
             RootObject = reader.ReadLengthPrefixedString();
             InstanceName = reader.ReadLengthPrefixedString();
         }

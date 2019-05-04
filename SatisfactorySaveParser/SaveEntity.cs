@@ -57,8 +57,13 @@ namespace SatisfactorySaveParser
         {
         }
 
-        public SaveEntity(BinaryReader reader) : base(reader)
+        public SaveEntity() : base()
         {
+        }
+
+        public override void ParseHeader(BinaryReader reader)
+        {
+            base.ParseHeader(reader);
             NeedTransform = reader.ReadInt32() == 1;
             Rotation = reader.ReadVector4();
             Position = reader.ReadVector3();
@@ -85,8 +90,7 @@ namespace SatisfactorySaveParser
             writer.Write(Components.Count);
             foreach (var obj in Components)
             {
-                writer.WriteLengthPrefixedString(obj.LevelName);
-                writer.WriteLengthPrefixedString(obj.PathName);
+                obj.SerializeData(writer);
             }
 
             base.SerializeData(writer);

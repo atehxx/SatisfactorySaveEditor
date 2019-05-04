@@ -13,6 +13,8 @@ namespace SatisfactorySaveParser.Structures
         public string PathName { get; set; }
         public SaveObject ReferencedObject { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        public int SerializedLength => LevelName.GetSerializedLength() + PathName.GetSerializedLength();
+
         public ObjectReference()
         {
         }

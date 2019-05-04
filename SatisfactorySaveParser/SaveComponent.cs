@@ -21,8 +21,13 @@ namespace SatisfactorySaveParser
         {
         }
 
-        public SaveComponent(BinaryReader reader) : base(reader)
+        public SaveComponent() : base()
         {
+        }
+
+        public override void ParseHeader(BinaryReader reader)
+        {
+            base.ParseHeader(reader);
             ParentEntityName = reader.ReadLengthPrefixedString();
         }
 

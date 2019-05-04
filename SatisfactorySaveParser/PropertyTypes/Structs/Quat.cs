@@ -1,15 +1,11 @@
-﻿using System.IO;
+﻿using SatisfactorySaveParser.Structures;
+using System.IO;
 
 namespace SatisfactorySaveParser.PropertyTypes.Structs
 {
     [System.Serializable]
-    public class Quat : IStructData
+    public class Quat : Vector4, IStructData
     {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Z { get; set; }
-        public float W { get; set; }
-
         public int SerializedLength => 16;
         public string Type => "Quat";
 

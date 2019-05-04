@@ -57,6 +57,21 @@
     <Compile Include="Exceptions\FatalSaveException.cs" />
     <Compile Include="Exceptions\UnknownBuildVersionException.cs" />
     <Compile Include="Exceptions\UnknownSaveVersionException.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\Build_ConveyorBelt.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\ConveyorBeltMk1\Build_ConveyorBeltMk1_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\ConveyorBeltMk2\Build_ConveyorBeltMk2_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\ConveyorBeltMk3\Build_ConveyorBeltMk3_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\ConveyorBeltMk4\Build_ConveyorBeltMk4_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Factory\PowerLine\Build_PowerLine_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Vehicle\Explorer\BP_Explorer_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Vehicle\Vehicle.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Vehicle\Truck\BP_Truck_C.cs" />
+    <Compile Include="Game\FactoryGame\Buildable\Vehicle\Tractor\BP_Tractor_C.cs" />
+    <Compile Include="Game\FactoryGame\Character\Player\BP_PlayerState_C.cs" />
+    <Compile Include="Game\FactoryGame\Shared\Blueprint\BP_CircuitSubsystem_C.cs" />
+    <Compile Include="Game\FactoryGame\Shared\Blueprint\BP_GameState_C.cs" />
+    <Compile Include="Game\FactoryGame\Shared\Blueprint\BP_GameMode_C.cs" />
+    <Compile Include="Game\FactoryGame\Shared\Blueprint\BP_RailroadSubsystem_C.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyTypes\ArrayProperty.cs" />
     <Compile Include="PropertyTypes\BoolProperty.cs" />
@@ -81,11 +96,13 @@
     <Compile Include="PropertyTypes\Structs\Rotator.cs" />
     <Compile Include="PropertyTypes\Structs\Vector.cs" />
     <Compile Include="PropertyTypes\TextProperty.cs" />
+    <Compile Include="Structures\ElementOnBelt.cs" />
     <Compile Include="SatisfactoryConstants.cs" />
     <Compile Include="SatisfactorySave.cs" />
     <Compile Include="SaveComponent.cs" />
     <Compile Include="SaveEntity.cs" />
     <Compile Include="SaveObject.cs" />
+    <Compile Include="SaveObjectFactory.cs" />
     <Compile Include="Save\EIntroTutorialSteps.cs" />
     <Compile Include="Save\ESessionVisibility.cs" />
     <Compile Include="Save\FSaveCustomVersion.cs" />
@@ -95,6 +112,7 @@
     <Compile Include="Structures\ObjectReference.cs" />
     <Compile Include="Structures\Vector3.cs" />
     <Compile Include="Structures\Vector4.cs" />
+    <Compile Include="Structures\VehicleAdditionalElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Research.xml">

@@ -58,16 +58,17 @@ namespace SatisfactorySaveParser
                 for (int i = 0; i < totalSaveObjects; i++)
                 {
                     var type = reader.ReadInt32();
-                    switch (type)
+                    var typePath = reader.ReadLengthPrefixedString();
+                    SaveObject so = SaveObjectFactory.CreateObjectFromType(type, typePath);
+                    if (null != so)
                     {
-                        case SaveEntity.TypeID:
-                            Entries.Add(new SaveEntity(reader));
-                            break;
-                        case SaveComponent.TypeID:
-                            Entries.Add(new SaveComponent(reader));
-                            break;
-                        default:
-                            throw new InvalidOperationException($"Unexpected type {type}");
+                        so.TypePath = typePath;
+                        so.ParseHeader(reader);
+                        Entries.Add(so);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException($"Couldn't find proper class for TypeId={type}, TypePath={typePath}");
                     }
                 }
 
