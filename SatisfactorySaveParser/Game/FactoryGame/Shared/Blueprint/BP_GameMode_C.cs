@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Shared.Blueprint
 {
     [TypePath("/Game/FactoryGame/-Shared/Blueprint/BP_GameMode.BP_GameMode_C")]
+    [Serializable]
     public class BP_GameMode_C : SaveEntity
     {
         public BP_GameMode_C() { }

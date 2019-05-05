@@ -1,10 +1,12 @@
 ﻿using SatisfactorySaveParser.Structures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Shared.Blueprint
 {
     [TypePath("/Game/FactoryGame/-Shared/Blueprint/BP_GameState.BP_GameState_C")]
+    [Serializable]
     public class BP_GameState_C : SaveEntity
     {
         public List<ObjectReference> States = new List<ObjectReference>();

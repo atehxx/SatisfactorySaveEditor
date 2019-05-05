@@ -1,9 +1,11 @@
 ﻿using SatisfactorySaveParser.Structures;
+using System;
 using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Factory.PowerLine
 {
     [TypePath("/Game/FactoryGame/Buildable/Factory/PowerLine/Build_PowerLine.Build_PowerLine_C")]
+    [Serializable]
     public class Build_PowerLine_C : SaveEntity
     {
         public ObjectReference WireSource { get; set; }

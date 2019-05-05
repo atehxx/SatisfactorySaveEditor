@@ -1,10 +1,12 @@
 ﻿using SatisfactorySaveParser.Structures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Shared.Blueprint
 {
     [TypePath("/Game/FactoryGame/-Shared/Blueprint/BP_CircuitSubsystem.BP_CircuitSubsystem_C")]
+    [Serializable]
     public class BP_CircuitSubsystem_C : SaveEntity
     {
         public Dictionary<int, ObjectReference> PowerCircuits { get; } = new Dictionary<int, ObjectReference>();

@@ -1,9 +1,11 @@
 ﻿using SatisfactorySaveParser.Structures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Vehicle
 {
+    [Serializable]
     public class Vehicle : SaveEntity
     {
         public List<VehicleAdditionalElement> VehicleAdditionalElements { get; } = new List<VehicleAdditionalElement>();

@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Shared.Blueprint
 {
     [TypePath("/Game/FactoryGame/-Shared/Blueprint/BP_RailroadSubsystem.BP_RailroadSubsystem_C")]
+    [Serializable]
     public class BP_RailroadSubsystem_C : SaveEntity
     {
         public BP_RailroadSubsystem_C() { }

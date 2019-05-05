@@ -1,9 +1,11 @@
 ﻿using SatisfactorySaveParser.Structures;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Factory
 {
+    [Serializable]
     public class Build_ConveyorBelt : SaveEntity
     {
         public List<ElementOnBelt> ElementsOnBelt { get; } = new List<ElementOnBelt>();
@@ -27,7 +29,6 @@ namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Factory
                     ElementsOnBelt.Add(element);
                 }
             }
-            System.Diagnostics.Trace.Write("X");
             base.ParseClassSpecificData(newLength, reader);
         }
 

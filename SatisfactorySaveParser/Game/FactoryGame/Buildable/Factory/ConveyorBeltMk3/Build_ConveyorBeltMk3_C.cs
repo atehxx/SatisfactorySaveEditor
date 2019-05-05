@@ -1,6 +1,9 @@
-﻿namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Factory.ConveyorBeltMk3
+﻿using System;
+
+namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Factory.ConveyorBeltMk3
 {
     [TypePath("/Game/FactoryGame/Buildable/Factory/ConveyorBeltMk3/Build_ConveyorBeltMk3.Build_ConveyorBeltMk3_C")]
+    [Serializable]
     public class Build_ConveyorBeltMk3_C : Build_ConveyorBelt
     {
         public Build_ConveyorBeltMk3_C() { }

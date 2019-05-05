@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace SatisfactorySaveParser.Game.FactoryGame.Character.Player
 {
     [TypePath("/Game/FactoryGame/Character/Player/BP_PlayerState.BP_PlayerState_C")]
+    [Serializable]
     public class BP_PlayerState_C : SaveEntity
     {
         public BP_PlayerState_C() { }

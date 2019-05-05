@@ -1,6 +1,9 @@
-﻿namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Vehicle.Truck
+﻿using System;
+
+namespace SatisfactorySaveParser.Game.FactoryGame.Buildable.Vehicle.Truck
 {
     [TypePath("/Game/FactoryGame/Buildable/Vehicle/Truck/BP_Truck.BP_Truck_C")]
+    [Serializable]
     public class BP_Truck_C : Vehicle
     {
         public BP_Truck_C() { }
